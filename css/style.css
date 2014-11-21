@@ -1,0 +1,26 @@
+.col-md-12{
+	background-color: #f0f0f0;
+	margin-top: 20%;
+	margin-left: 25%;
+	width: 45%;
+	padding-top: 30px;
+	padding-bottom: 50px;
+	border-radius: 20px;
+}
+
+.backgound_img{
+	margin-left: -30px;
+}
+
+.title_text{
+	text-align: center;
+}
+
+.error{
+	color: red;
+}
+
+#center{
+	
+	text-align: center;
+}
