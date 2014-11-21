@@ -21,6 +21,59 @@ body {
 	text-align: center;
 }
 
+.error{
+	color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Below here is the code START for footer.php Zia*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Above here is the code END for footer_page.php */
+
+
+
+
+
+
+
+
+
+/* Below here is the code START for Main_page.php Zia*/
 
 .welcome_text{
 	margin-top: 70px;
@@ -29,24 +82,6 @@ body {
 
 
 
-
-
-.backgound_img{
-	margin-left: -30px;
-}
-
-.title_text{
-	text-align: center;
-}
-
-.error{
-	color: red;
-}
-
-#center{
-	
-	text-align: center;
-}
 
 
 
