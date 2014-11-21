@@ -1,6 +1,5 @@
-	<!-- this will includes all the links files we need for this site to work! -->
-	<?php include_once 'includes/header.php';?>
-
+<!-- this will includes all the links files we need for this site to work! -->
+<?php include_once 'includes/header.php';?>
 
 	<body>
 		
@@ -46,9 +45,9 @@
 					
 					<div class="col-xs-6 col-md-3">
 						<div class="list-group">
-						  <a href="paymnet.php" class="list-group-item active">
+						  <a href="payment.php" class="list-group-item active">
 						    <center><h4 class="list-group-item-heading">Paymants</h4></center>
-						    <a href="paymnet.php" class="thumbnail"><img src="img/payments.jpeg" alt="..."></a>
+						    <a href="payment.php" class="thumbnail"><img src="img/payments.jpeg" alt="..."></a>
 						  </a>
 						</div>
 					</div>
@@ -110,3 +109,5 @@
 			
 			<!-- End of the page design in main page -->
 	</body>
+</html>
+	

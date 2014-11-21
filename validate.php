@@ -18,7 +18,7 @@
 			// check if name only contains letters and whitespace
 			$userName = test_input($_POST["userName"]);
 			$pass = test_input($_POST["pass"]);
-			if (!preg_match("/^[a-zA-Z ]*$/",$userName) || !preg_match("/^[a-zA-Z ]*$/",$pass)) {
+			if (!preg_match("/^[a-zA-Z0-9 ]*$/",$userName) || !preg_match("/^[a-zA-Z0-9 ]*$/",$pass)) {
 			$validate =false;
 			$error =2;
 			}
@@ -39,23 +39,15 @@
 	if($validate){
 		
 		require "includes/db.php";
-		$user =$db -> query("SELECT* FROM Login WHERE Username='$username' AND Password ='$password'");
-		
-		echo '<pre>$_POST contains: ';
-			print_r($user);
-		echo '</pre>';
-	
-	
+		$users =$db -> query("SELECT* FROM Login WHERE Username='$userName' AND Password ='$pass'");
+
 		if($users->num_rows==1){
 			$_SESSION["loggedIn"] =true;
-			$_SESSION["username"] =$username;
-			$_SESSION["person_id"] =$password;
+			$_SESSION["username"] =$userName;
+			$_SESSION["person_id"] =$pass;
 			
-			header("location: home.php");
-			
-		echo '<pre>';
-			print_r($_SESSION);
-		echo '</pre>';
+			header("location: main_page.php");
+
 		}
 		
 		else{

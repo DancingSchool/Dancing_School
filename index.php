@@ -1,12 +1,11 @@
 
-
 <?php
 	include_once 'includes/session.php';		
 	include_once 'includes/header.php';
 ?>
 	<body>
 		<!--This is my big div wrapped the full page-->
-		<div class="col-md-12">
+		<div class="col-md-12 login_form">
 			<div id ="center">
 			
 				<!-- Detect and desplay error message on the page when the user loging fails-->
@@ -26,14 +25,23 @@
 					}
 				?>
 			</div>
-		<?php require_once 'includes/form.php';?>
+			<?php require_once 'includes/form.php';?>
+		</div>
+		
+		<!-- I will delete this button later for now just to go on next page -->
+		<a href="main_page.php" class="btn btn-default btn-danger">Main Page1</a>
+
+		
+		<!-- This include fulction will add all the jQuery functions -->
+		<?php include_once 'includes/bottom_jQuery_script.php';?>
+
 
 	
-	<!--Link to the google JQeury library and to bootstrap-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="js/bootstrap.js"></script>	
+		<div class="container col-md-12 footer_note ">
+			<?php include_once 'includes/footer.php';?>
+		</div>
+	
 	</body>
 
 
-	
 </html>
