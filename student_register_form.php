@@ -2,33 +2,7 @@
 	<?php include_once 'includes/header.php';
 		include'includes/session.php';
 	?>
-	
-<?php
-	
-	require 'db.php';
-	
-	if(isset($_POST['search_name'])){
-		$search_name = $_POST['search_name'];
-		if(!empty($search_name)){
-			
-			$students = $db->query("SELECT name FROM names WHERE name LIKE '%$search_name%'");
 
-			
-			if($students->num_rows>=1){
-				while($student =$students->fetch_object()){
-					
-				
-				echo $student->name.'<br/>';
-				
-				}
-			}	
-			else{
-				echo 'No results found. sorry!';
-			}
-		}
-	}
-
-?>
 
 	<body>
 		
@@ -37,15 +11,6 @@
 			
 		</head><!--End of the Head div -->
 		
-		
-		
-		
-		
-
-		
-		
-	
-			
 			<div class="container welcome_text">
 				<div class="row">
 					
@@ -59,6 +24,7 @@
 					
 					
 					<div class="col-md-6">
+						<form action="student_register_form.php" method="post">
 						<div class="list-group">
 						  <a href="#" class="list-group-item active">
 						    <center><input type="text" class="form-control text-center" name="searchName" placeholder="search student by name... "></center>
@@ -67,33 +33,70 @@
 						 
 						</div>
 						 <center class="col-md-3 btn"><input type="submit" class="form-control text-center" value="search"></center>
+						</form>
 					</div>
 					
 					
 					<div class="col-sm-24 col-md-12">
 						<div class="list-group">
-						  <a href="#" class="list-group-item">
-						    <center><h4 class="list-group-item-heading ">Students found in database </h4></center>
-						  </a>
+						  
+						    <center><h4 class="col-md-12 list-group-item-heading ">Students found in database </center><br/><br/><br/></h4>
+						  
 							
 							
-							<table class="col-sm-12 col-md-12 table table-bordered table table-hover row">
+							<table class="col-sm-12 col-md-12 row">
 								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student id</p>
 								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student gender</p>
 								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student first name</p>
 								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student Family name</p>
 								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student Couple</p>
 								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student Results</p>
-								<p class="table-bordered col-sm-12 col-md-12">This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1  This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1 This is the paragraph 1</p>
 								
-								<a href="#" class="btn btn-primary">Delete Styudent</a><br/><br/>
+								<div class="container col-md-12">
+									<div class="row"><hr/>
+										
+										
+										
+										<?php
+											
+											require 'includes/db.php';
+											
+											if(isset($_POST['searchName'])){
+												$search_name = $_POST['searchName'];
+												if(!empty($search_name)){
+													
+													$students = $db->query("SELECT* FROM Student WHERE First_name LIKE '%$search_name%'");
+										
+													
+													if($students->num_rows>=1){
+														while($student =$students->fetch_object()){
+															
+														
+														echo "<p class='col-sm-2 col-md-2 text-center text-capitalize'>$student->Student_id</p>
+															<p class='col-sm-2 col-md-2 text-center text-capitalize'>$student->First_name</p>
+															<p class='col-sm-2 col-md-2 text-center text-capitalize'>$student->Last_name</p>
+															<p class='col-sm-2 col-md-2 text-center text-capitalize'>$student->Gender</p>
+															<p class='col-sm-2 col-md-2 text-center text-capitalize'>$student->Email</p>
+															<p class='col-sm-2 col-md-2 text-center text-capitalize'>$student->Instructor_id</p>
+															<p class='col-sm-2 col-md-2 text-center text-capitalize'>$student->Couple_id</p>
+														";
+														
+														}
+													}	
+													else{
+														echo 'No student match this name!';
+													}
+												}
+											}
+										
+										?>
+										
+										<hr/>
+										
+										
+									</div>
+								</div>
 								
-								<a href="#" class="list-group-item-heading">This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1  This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1 This is the paragraph 1</a><br/>
-								<a href="#" class="list-group-item-heading">This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1  This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1 This is the paragraph 1</a><br/>
-								<a href="#" class="list-group-item-heading">This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1  This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1 This is the paragraph 1</a><br/>
-								<a href="#" class="list-group-item-heading">This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1  This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1 This is the paragraph 1</a><br/>
-								
-						    	<p class="table-bordered col-md-2 table-bordered">This is the paragraph 1</p>
 							</table>
 						
 						</div>
