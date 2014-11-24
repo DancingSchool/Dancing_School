@@ -3,7 +3,32 @@
 		include'includes/session.php';
 	?>
 	
+<?php
+	
+	require 'db.php';
+	
+	if(isset($_POST['search_name'])){
+		$search_name = $_POST['search_name'];
+		if(!empty($search_name)){
+			
+			$students = $db->query("SELECT name FROM names WHERE name LIKE '%$search_name%'");
 
+			
+			if($students->num_rows>=1){
+				while($student =$students->fetch_object()){
+					
+				
+				echo $student->name.'<br/>';
+				
+				}
+			}	
+			else{
+				echo 'No results found. sorry!';
+			}
+		}
+	}
+
+?>
 
 	<body>
 		
