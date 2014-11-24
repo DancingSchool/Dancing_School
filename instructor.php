@@ -41,12 +41,6 @@
 		
 		
 		
-		
-		
-		
-		
-		
-		
 	
 			<!-- This include fulction will add all the jQuery functions -->
 			<?php include_once 'includes/bottom_jQuery_script.php';?>	

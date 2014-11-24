@@ -33,12 +33,15 @@
 					</div>
 					
 					
-					<div class="col-sm-12 col-md-9">
+					<div class="col-md-6">
 						<div class="list-group">
 						  <a href="#" class="list-group-item active">
-						    <center><input type="text" class="form-control text-center" placeholder="search student by name... "></center>
+						    <center><input type="text" class="form-control text-center" name="searchName" placeholder="search student by name... "></center>
+						    
 						    </a>
+						 
 						</div>
+						 <center class="col-md-3 btn"><input type="submit" class="form-control text-center" value="search"></center>
 					</div>
 					
 					
@@ -58,7 +61,7 @@
 								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student Results</p>
 								<p class="table-bordered col-sm-12 col-md-12">This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1  This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1 This is the paragraph 1</p>
 								
-								
+								<a href="#" class="btn btn-primary">Delete Styudent</a><br/><br/>
 								
 								<a href="#" class="list-group-item-heading">This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1  This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1 This is the paragraph 1</a><br/>
 								<a href="#" class="list-group-item-heading">This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1  This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1 This is the paragraph 1</a><br/>

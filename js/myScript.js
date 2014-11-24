@@ -80,3 +80,61 @@
 				
 				
 			    };
+			    
+			    
+			    function validatePayment(form){
+				var stID=form.stID.value.trim();
+				var amount =form.amount.value.trim();
+				var validated =true;
+		
+				if(stID.length<=0){
+				    setError(document.getElementById("stID"));
+				    validated=false;
+				    }
+							
+				else{
+				    setCorrect(document.getElementById("stID"));
+				    }
+				    
+				if(amount.length<=0 || isNaN(amount)){
+				    setError(document.getElementById("amount"));
+				    validated=false;
+				    }
+							
+				else{
+				    setCorrect(document.getElementById("amount"));
+				    }
+					
+					
+				return validated;
+				
+				
+			    };
+			    
+			    function validateCouple(form){
+				var mID=form.maleID.value.trim();
+				var fID =form.femaleID.value.trim();
+				var validated =true;
+		
+				if(mID.length<=0){
+				    setError(document.getElementById("maleID"));
+				    validated=false;
+				    }
+							
+				else{
+				    setCorrect(document.getElementById("maleID"));
+				    }
+				    
+				if(fID.length<=0){
+				    setError(document.getElementById("femaleID"));
+				    validated=false;
+				    }
+							
+				else{
+				    setCorrect(document.getElementById("femaleID"));
+				    }
+					
+				return validated;
+				
+				
+			    };
