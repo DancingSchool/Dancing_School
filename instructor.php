@@ -21,27 +21,47 @@
 		<div class="container welcome_text">
 
 			
-			 <p>welcome to Instructor  page</p>
+			<div class="row">
+				<div class="col-md-3">
+						<a href="#" class="thumbnail">
+							<img src="img/payments.jpeg">
+						</a>
+							<p class="text-center">Name: <a href="#">Zia </a></p>
+							<p class="text-center">Surname: <a href="#">Ahmed</a></p>
+							<p class="text-center">Email: <a href="#">zia.ahmed@me.com</a></p>
+					</div>
 
-		<?php
+			</div>
 			
-			$instructors = $db->query("SELECT* FROM Instructor");
-	
-			while($instructor =$instructors->fetch_object()){
+			
+					<?php
+						
+						$instructors = $db->query("SELECT* FROM Instructor");
 				
-				echo "<table class='table table-bordered'>
+						while($instructor =$instructors->fetch_object()){
+							
+							echo "<table class='table table-bordered'>
+							
+							<tr>
+								<th></th>
+								
+								
+							</tr>
+							
+							</table>";
 				
-				<tr>
-					<th></th>
+						}
 					
-					
-				</tr>
-				
-				</table>";
-	
-			}
+					?>
+
+
 		
-		?>
+		
+		
+		
+		
+		
+		
 
 		
 		</div>
