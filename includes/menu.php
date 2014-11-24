@@ -12,22 +12,8 @@
 				<!-- To mak this part of the menu to get collaspe when we view that in mobile devices -->
 				<div class="collapse navbar-collapse navHedaerCollapse">
 					<ul class="nav navbar-nav navbar-right">
-						
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">Blog</a></li>
-						<li class="dropdown">
-							
-							<a href="#" class="dropdown-toggle" data-toggle = "dropdown">Social Media<b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Facebook</a></li>
-								<li><a href="#">Twitter</a></li>
-								<li><a href="#">Google +</a></li>
-								<li><a href="#">YouTube</a></li>
-							</ul>
-							
-						</li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Contact us</a></li>
+						<li> <p class="btn">Loggin us: <?php echo $_SESSION["username"];?></p></li>
+						<a href ='process-logout.php'class='btn btn-info'>Logout</a>
 					</ul>
 				</div>
 			</div>

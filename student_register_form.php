@@ -1,5 +1,8 @@
 	<!-- this will includes all the links files we need for this site to work! -->
-	<?php include_once 'includes/header.php';?>
+	<?php include_once 'includes/header.php';
+		include'includes/session.php';
+	?>
+	
 
 
 	<body>
@@ -91,7 +94,9 @@
 			<?php include_once 'includes/footer.php';?>
 			
 			
-			
+			<br>
+			<br>
+			<a href ='main_page.php' class='btn btn-default btn-info col-md-offset-1'>Back to Main Page</a>
 			
 			<!-- End of the page design in main page -->
 	</body>

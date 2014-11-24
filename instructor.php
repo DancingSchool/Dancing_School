@@ -1,5 +1,10 @@
 	<!-- this will includes all the links files we need for this site to work! -->
-	<?php include_once 'includes/header.php';?>
+	<?php
+	
+		include_once 'includes/header.php';
+		include 'includes/db.php';
+		include'includes/session.php';
+	?>
 
 
 	<body>
@@ -14,11 +19,30 @@
 		
 		
 		<div class="container welcome_text">
+
+			
+			 <p>welcome to Instructor  page</p>
+
 		<?php
 			
-			echo 'welcome to Instructor  page';
-		?>
+			$instructors = $db->query("SELECT* FROM Instructor");
+	
+			while($instructor =$instructors->fetch_object()){
+				
+				echo "<table class='table table-bordered'>
+				
+				<tr>
+					<th></th>
+					
+					
+				</tr>
+				
+				</table>";
+	
+			}
 		
+		?>
+
 		
 		</div>
 		

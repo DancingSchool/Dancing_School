@@ -1,15 +1,17 @@
 	<!-- this will includes all the links files we need for this site to work! -->
-	<?php include_once 'includes/header.php';?>
+	<?php include_once 'includes/header.php';
+		include'includes/session.php';
+	?>
+		
 
 
 	<body>
 		
-		<head class="col-md-12">
+	
+		<div class="col-md-12">
 			<?php include_once 'includes/menu.php';?>	
 			
-		</head><!--End of the Head div -->
-		
-		
+		</div><!--End of the Head div -->	
 		
 		
 		
@@ -20,50 +22,49 @@
 				
 					<h2 class="text-center">Student Register Form</h2> <hr/>
 					
-					<form class="form-horizontal">
+					<form action="stValidation.php" onsubmit=" return validateForm(this)" method="post" class="form-horizontal">
 						
 						<div class="form-group">
-							<lable class="col-sm-2 text-right control-lable" for="gender">Gender :</lable>
+							<p class="col-sm-2 text-right control-lable" id="firstName">First name :</p>
+							<div class="col-sm-6">
+								<input type="text" name ="firstName" class="form-control" placeholder="Type student name..." />
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<p class="col-sm-2 text-right control-lable" id="lastName">Family name :</p>
+							<div class="col-sm-6">
+								<input type="text" name ="lastName" class="form-control" placeholder="Type student name..." />
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<p class="col-sm-2 text-right control-lable" id="gender">Gender :</p>
 							<div class="col-sm-6">
 								<label class="radio-inline">
-									<input type="radio" name="genderRadio" value="male" />Male
+									<input type="radio" id ="male" name="genderRadio" value="male" />Male
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="genderRadio" value="female" />Female
+									<input type="radio" id ="female" name="genderRadio" value="female" />Female
 								</label>							
 							</div>
 						</div>
 						
-						
 						<div class="form-group">
-							<lable class="col-sm-2 text-right control-lable" for="first-name">First name :</lable>
+							<p class="col-sm-2 text-right control-lable" id="Email">Email :</p>
 							<div class="col-sm-6">
-								<input type="text" class="form-control" placeholder="Type student name..." />
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<lable class="col-sm-2 text-right control-lable" for="family-name">Family name :</lable>
-							<div class="col-sm-6">
-								<input type="text" class="form-control" placeholder="Type student name..." />
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<lable class="col-sm-2 text-right control-lable" for="email">Email :</lable>
-							<div class="col-sm-6">
-								<input type="email" class="form-control" placeholder="Type student email..." />
+								<input type="text" name="Email" class="form-control" placeholder="Type student email..." />
 							</div>
 						</div>						
 						<div class="form-group">
-							<lable class="col-sm-2 text-right control-lable" for="city">Instructors:</lable>
+							<p class="col-sm-2 text-right control-lable">Instructors:</p>
 							<div class="col-sm-6">
-								<select class="form-control">
-									<option value="Azam">Azam</option>
-									<option value="Aliyu">Aliyu</option>
-									<option value="Nmat">Nmat</option>
-									<option value="Saber">Saber</option>
-									<option value="Zia">Zia</option>
+								<select name ="instID" class="form-control">
+									<option value="1">Sum</option>
+									<option value="2">Jelue</option>
+									<option value="3">David</option>
+									<option value="4">Shawa</option>
+									<option value="5">Hares</option>
 								</select>								
 							</div>
 						</div>

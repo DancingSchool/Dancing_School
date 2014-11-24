@@ -8,5 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css.map">	
 		<link rel="stylesheet" type="text/css" href="js/bootstrap.min.js">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+		<script type = "text/javascript" src="js/myScript.js"></script>
 	</head>
 	
