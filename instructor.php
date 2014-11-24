@@ -9,62 +9,35 @@
 
 	<body>
 		
-		<head class="col-md-12">
+		<head class="container col-md-12">
 			<?php include_once 'includes/menu.php';?>	
 			
 		</head><!--End of the Head div -->
 		
 		
-		
-		
-		
-		<div class="container welcome_text">
-
-			
-			<div class="row">
-				<div class="col-md-3">
-						<a href="#" class="thumbnail">
-							<img src="img/payments.jpeg">
-						</a>
-							<p class="text-center">Name: <a href="#">Zia </a></p>
-							<p class="text-center">Surname: <a href="#">Ahmed</a></p>
-							<p class="text-center">Email: <a href="#">zia.ahmed@me.com</a></p>
-					</div>
-
-			</div>
-			
-			
-					<?php
+		<?php
 						
-						$instructors = $db->query("SELECT* FROM Instructor");
+			$instructors = $db->query("SELECT* FROM Instructor");
 				
-						while($instructor =$instructors->fetch_object()){
-							
-							echo "<table class='table table-bordered'>
-							
-							<tr>
-								<th></th>
-								
-								
-							</tr>
-							
-							</table>";
+			while($instructor =$instructors->fetch_object()){
+				$inst++;
 				
-						}
-					
-					?>
-
-
+				echo "<div class='container welcome_text col-md-4'>
+				
+					<div class='row'>
+						<div class='col-md-12'>
+							<img class='col-md-6' src='img/instructors/inst$inst.png'>
+							
+							<p class='text-left'>Name: $instructor->First_name</p>
+							<p class='text-left'>Surname: $instructor->Last_name</p>
+							<p class='text-left'>Email: <a href'#'>$instructor->Email</a></p>
+						</div>
+					</div>
 		
+				</div>";
+			}
+		?>
 		
-		
-		
-		
-		
-		
-
-		
-		</div>
 		
 		
 		
