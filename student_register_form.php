@@ -25,35 +25,42 @@
 					
 					<div class="col-md-6">
 						<form action="student_register_form.php" method="post">
-						<div class="list-group">
-						  <a href="#" class="list-group-item active">
-						    <center><input type="text" class="form-control text-center" name="searchName" placeholder="search student by name... "></center>
-						    
-						    </a>
-						 
-						</div>
-						 <center class="col-md-3 btn"><input type="submit" class="form-control text-center" value="search"></center>
-						</form>
+							<div class="list-group">
+							  <a href="#" class="list-group-item active">
+							    <center><input type="text" class="form-control text-center" name="searchName" placeholder="Search student by name... "></center>
+							    
+							    </a>
+							</div>
+							
+							 
+						
+					</div>
+					
+					<div class="row">
+						 <center class="col-md-2 btn btn-info"><input type="submit" class="form-control text-center" value="Search">
+							 </center>
+					</form>
 					</div>
 					
 					
 					<div class="col-sm-24 col-md-12">
 						<div class="list-group">
 						  
-						    <center><h4 class="col-md-12 list-group-item-heading ">Students found in database </center><br/><br/><br/></h4>
+						    <center><h3 class="col-md-12 list-group-item-heading">Students found in database </center><br/><br/><br/></h3>
 						  
 							
 							
-							<table class="col-sm-12 col-md-12 row">
-								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student id</p>
-								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student gender</p>
-								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student first name</p>
-								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student Family name</p>
-								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student Couple</p>
-								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student Results</p>
-								
-								<div class="container col-md-12">
-									<div class="row"><hr/>
+							<table class=" col-md-12 row">
+								<p class="well col-md-1 text-center text-capitalize">ID</p>
+								<p class="well col-md-1 text-center text-capitalize">Gender</p>
+								<p class="well col-md-2 text-center text-capitalize">First name</p>
+								<p class="well col-md-2 text-center text-capitalize">Family name</p>
+								<p class="well col-md-3 text-center text-capitalize">Student email</p>
+								<p class="well col-md-2 text-center text-capitalize">Instructor Id</p>
+								<br/>
+							
+								<div class=" col-md-12">
+									<div class="row">
 										
 										
 										
@@ -72,14 +79,18 @@
 														while($student =$students->fetch_object()){
 															
 														
-														echo "<p class='col-sm-2 col-md-2 text-center text-capitalize'>$student->Student_id</p>
-															<p class='col-sm-2 col-md-2 text-center text-capitalize'>$student->First_name</p>
-															<p class='col-sm-2 col-md-2 text-center text-capitalize'>$student->Last_name</p>
-															<p class='col-sm-2 col-md-2 text-center text-capitalize'>$student->Gender</p>
-															<p class='col-sm-2 col-md-2 text-center text-capitalize'>$student->Email</p>
-															<p class='col-sm-2 col-md-2 text-center text-capitalize'>$student->Instructor_id</p>
-															<p class='col-sm-2 col-md-2 text-center text-capitalize'>$student->Couple_id</p>
-														";
+														echo "<p class=' col-md-1 text-center text-capitalize'>$student->Student_id</p>
+																<p class=' col-md-1 text-center text-capitalize'>$student->Gender</p>
+																<p class=' col-md-2 text-center text-capitalize'>$student->First_name</p>
+																<p class=' col-md-2 text-center text-capitalize'>$student->Last_name</p>
+																<p class=' col-md-3 text-center text-capitalize'>$student->Email</p>
+															<p class=' col-md-2 text-center text-capitalize'>$student->Instructor_id</p>
+															
+															<form action='#' method='#'>
+																<input type='submit' value='Delete'  class='btn btn-danger pull-right'/>
+															</form>
+															<br/><hr/>
+																						";
 														
 														}
 													}	
@@ -91,14 +102,10 @@
 										
 										?>
 										
-										<hr/>
-										
 										
 									</div>
 								</div>
-								
 							</table>
-						
 						</div>
 					</div>
 				</div>
