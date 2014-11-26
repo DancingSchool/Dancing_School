@@ -13,5 +13,7 @@
 		
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type = "text/javascript" src="js/myScript.js"></script>
+		<script type = "text/javascript" src="js/jQuery.js"></script>
+		<script type = "text/javascript" src="js/st_performance.js"></script>
 	</head>
 	
