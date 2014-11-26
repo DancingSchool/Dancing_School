@@ -1,8 +1,12 @@
 <!-- this will includes all the links files we need for this site to work! -->
 <?php include_once 'includes/header.php';
 	include'includes/session.php';
+	
+	if(!isset($_SESSION['username'])){
+		
+		header ("location: index.php");
+	}
 ?>
-
 	<body>
 		
 		<head class="col-md-12">
