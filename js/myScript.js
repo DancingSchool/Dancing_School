@@ -115,8 +115,13 @@
 				var mID=form.maleID.value.trim();
 				var fID =form.femaleID.value.trim();
 				var validated =true;
+<<<<<<< HEAD
 				var checked;
 				if(mID.length<=0 ||isNaN(mID)){
+=======
+		
+				if(mID.length<=0){
+>>>>>>> FETCH_HEAD
 				    setError(document.getElementById("maleID"));
 				    validated=false;
 				    }
@@ -125,7 +130,11 @@
 				    setCorrect(document.getElementById("maleID"));
 				    }
 				    
+<<<<<<< HEAD
 				if(fID.length<=0 ||isNaN(fID)){
+=======
+				if(fID.length<=0){
+>>>>>>> FETCH_HEAD
 				    setError(document.getElementById("femaleID"));
 				    validated=false;
 				    }
@@ -134,6 +143,7 @@
 				    setCorrect(document.getElementById("femaleID"));
 				    }
 					
+<<<<<<< HEAD
 				for(var i =0; i<document.couple.checkB.length; i++){
 
 					if(document.couple.checkB[i].checked){
@@ -197,3 +207,9 @@
 				    
 			    }
 			    
+=======
+				return validated;
+				
+				
+			    };
+>>>>>>> FETCH_HEAD

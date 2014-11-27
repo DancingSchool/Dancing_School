@@ -11,13 +11,22 @@
 			<div class="row">
 				<div class="col-md-12">
 				
+<<<<<<< HEAD
 					<h2 class="text-center">Payment Register Formpaes</h2> <hr/>
+=======
+					<h2 class="text-center">Payment Register Form</h2> <hr/>
+>>>>>>> FETCH_HEAD
 					
 					<form action="payProcess.php" onsubmit=" return validatePayment(this)" method="post" class="form-horizontal">
 						
 						<div class="form-group">
+<<<<<<< HEAD
 							<p class="col-md-2 text-right control-lable" id="stID">Student ID :</p>
 							<div class="col-md-10">
+=======
+							<p class="col-sm-2 text-right control-lable" id="stID">Student ID :</p>
+							<div class="col-sm-6">
+>>>>>>> FETCH_HEAD
 								<input type="text" name ="stID" class="form-control" placeholder="Type student ID..." />
 							</div>
 						</div>
