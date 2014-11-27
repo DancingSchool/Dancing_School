@@ -1,0 +1,273 @@
+#about_us{
+	float: left;
+	position: relative;
+	width: 74%;
+	margin-top: 30px;
+	margin-left: 10%;
+	
+}
+
+#about_us_mian{
+	float: left;
+	position: relative;
+	margin-top: -10px;
+}
+
+.contain_one{
+	width: 70%;
+	height:200px;
+	background:#FFF;
+	margin:40px auto;
+	border: 2px solid white;
+	
+}
+
+.effect
+{
+  	position:relative;       
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect:before, .effect:after
+{
+	content:"";
+    position:absolute; 
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:0;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+} 
+.effect:after
+{
+	right:10px; 
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg); 
+       -moz-transform:skew(8deg) rotate(3deg);     
+        -ms-transform:skew(8deg) rotate(3deg);     
+         -o-transform:skew(8deg) rotate(3deg); 
+            transform:skew(8deg) rotate(3deg);
+}
+
+
+
+
+
+
+
+
+#about_us_p_title{
+	float: left;
+	position: relative;
+	text-align: center;
+	width: 100%;
+	font-size: 1.5em;
+}
+
+#about_us_p_text{
+	float: left;
+	position: relative;
+	text-align: center;
+	width: 70%;
+	margin-left: 15%;
+	margin-top: 5px;
+	font-size: 1em;
+}
+
+
+#about_us_mian  div{
+	float: left;
+	position: relative;
+	width: 45%;
+	margin-left: 9%;
+	margin-top: 30px;
+	height: 160px;
+	border: 2px dotted  none;
+}
+
+.contain_one:hover {
+
+	border: 2px dotted lightgray;
+}
+
+
+#about_us_mian div:first-child{
+	margin-left: 0px;
+}
+
+#about_us div:nth-of-type(3){
+	margin-left: 0px;
+}
+
+.about_us_title{ /*  (h2) this is the h2 text for all the text boxes in about us page, i have change the name so this code doesn't effect all others h2 in this site  */
+	text-align: center;
+	font-size: 1.3em;
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 23px;
+}
+
+.about_us_paragraph{
+	float: left;
+	position: relative;
+	margin-top: -10px;
+	text-align: center;
+	width: 80%;
+	margin-left: 10%;
+}
+
+
+#read_more_1, #read_more_2{
+	float: right;
+	margin-right: 50px;
+	margin-top: 5px;
+	position: relative;
+	text-decoration: underline;
+	color: red;
+	
+}
+
+
+#taxis_text{
+	float: left;
+	position: relative;
+	width: 100%;
+	margin-top: -20px;
+}
+
+#private_hire_text, #Hackney_hire_text{
+	float: left;
+	position: relative;
+	width: 100%;
+}
+
+
+
+
+#private_hire_text  h1, #Hackney_hire_text h1{
+	text-align: center;
+	font-size: 1.5em;
+	margin-top: 10px;
+	text-decoration: underline;
+	margin-top: 30px;
+}
+
+#private_hire_text p, #Hackney_hire_text p{
+	float: left;
+	position: relative;
+	width: 65%;
+	margin-left: 2%;
+	margin-top: 10px;
+	font-size: 1em;
+}
+
+#private_hire_text img, #Hackney_hire_text img{
+	width: 30%;
+	height: 200px;
+	border-radius: 30px 0px 30px 0px;
+	float: left;
+	position: relative;
+	margin-left: 1%;
+	margin-top: 10px;
+	border: 5px solid white;
+}
+
+
+
+
+
+
+
+
+
+#our_team{
+	float: left;
+	position: relative;
+	width: 75%;
+	margin-left: 10%;
+	margin-top: 10px;
+	
+}
+
+#our_team h1{
+	text-align: center;
+	font-size: 1.5em;
+	text-decoration: underline;
+}
+
+#our_team div{
+	float: left;
+	position: relative;
+	width: 23%;
+	margin-left: 1%;
+	border: 5px solid white;
+	border-radius: 10px;
+}
+
+#our_team div:hover{
+	background-color: lightgray;
+	cursor:pointer;
+}
+
+#our_team div:nth-of-type(1){
+	margin-left: 0px;
+}
+
+.background_image{
+	width: 100%;
+	height: 150px;
+	border-radius: 10px 10px 0px 0px;
+	border-bottom: 10px solid white;
+}
+
+.staff_picture{
+	width: 42%;
+	height: 110px;
+	margin-top: -70px;
+	margin-left: 28%;
+	border-radius: 100px;
+	border: 5px solid white;
+}
+
+.staff_picture div:hover{
+	border: 2px solid red;
+}
+
+.names{
+	position: relative;
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.staff_description{
+	position: relative;
+	text-align: center;
+	margin-top: -5px;
+}
+
+.contact_info{
+	text-align: center;
+	position: relative;
+	font-size: 0.9em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 
 <?php
-	include_once 'includes/session.php';		
+//	include_once 'includes/session.php';		
 	include_once 'includes/header.php';
 ?>
 	<body>
@@ -21,7 +21,7 @@
 					
 					else if($_GET["error"]==3){
 						
-						echo "<p class='error'> Incurrect Username or Password, please try again!</p>";
+						echo "<p class='error'> Incorrect Username or Password, please try again!</p>";
 					}
 				?>
 			</div>

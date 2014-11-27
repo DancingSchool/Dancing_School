@@ -1,5 +1,7 @@
 	<!-- this will includes all the links files we need for this site to work! -->
-	<?php include_once 'includes/header.php';?>
+	<?php include_once 'includes/header.php';
+		include'includes/session.php';
+	?>
 
 
 	<body>
@@ -9,15 +11,6 @@
 			
 		</head><!--End of the Head div -->
 		
-		
-		
-		
-		
-
-		
-		
-	
-			
 			<div class="container welcome_text">
 				<div class="row">
 					
@@ -30,41 +23,89 @@
 					</div>
 					
 					
-					<div class="col-sm-12 col-md-9">
-						<div class="list-group">
-						  <a href="#" class="list-group-item active">
-						    <center><input type="text" class="form-control text-center" placeholder="search student by name... "></center>
-						    </a>
-						</div>
+					<div class="col-md-6">
+						<form action="student_register_form.php" method="post">
+							<div class="list-group">
+							  <a href="#" class="list-group-item active">
+							    <center><input type="text" class="form-control text-center" name="searchName" placeholder="Search student by name... "></center>
+							    
+							    </a>
+							</div>
+							
+							 
+						
+					</div>
+					
+					<div class="row">
+						 <center class="col-md-2 btn btn-info"><input type="submit" class="form-control text-center" value="Search">
+							 </center>
+					</form>
 					</div>
 					
 					
 					<div class="col-sm-24 col-md-12">
 						<div class="list-group">
-						  <a href="#" class="list-group-item">
-						    <center><h4 class="list-group-item-heading ">Students found in database </h4></center>
-						  </a>
+						  
+						    <center><h3 class="col-md-12 list-group-item-heading">Students found in database </center><br/><br/><br/></h3>
+						  
 							
 							
-							<table class="col-sm-12 col-md-12 table table-bordered table table-hover row">
-								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student id</p>
-								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student gender</p>
-								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student first name</p>
-								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student Family name</p>
-								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student Couple</p>
-								<p class="col-sm-2 col-md-2 text-center text-capitalize">Student Results</p>
-								<p class="table-bordered col-sm-12 col-md-12">This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1  This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1 This is the paragraph 1</p>
-								
-								
-								
-								<a href="#" class="list-group-item-heading">This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1  This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1 This is the paragraph 1</a><br/>
-								<a href="#" class="list-group-item-heading">This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1  This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1 This is the paragraph 1</a><br/>
-								<a href="#" class="list-group-item-heading">This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1  This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1 This is the paragraph 1</a><br/>
-								<a href="#" class="list-group-item-heading">This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1  This is the paragraph 1 	This is the paragraph 1 	This is the paragraph 1 This is the paragraph 1</a><br/>
-								
-						    	<p class="table-bordered col-md-2 table-bordered">This is the paragraph 1</p>
+							<table class=" col-md-12 row">
+								<p class="well col-md-1 text-center text-capitalize">ID</p>
+								<p class="well col-md-1 text-center text-capitalize">Gender</p>
+								<p class="well col-md-2 text-center text-capitalize">First name</p>
+								<p class="well col-md-2 text-center text-capitalize">Family name</p>
+								<p class="well col-md-3 text-center text-capitalize">Student email</p>
+								<p class="well col-md-2 text-center text-capitalize">Instructor Id</p>
+								<br/>
+							
+								<div class=" col-md-12">
+									<div class="row">
+										
+										
+										
+										<?php
+											
+											require 'includes/db.php';
+											
+											if(isset($_POST['searchName'])){
+												$search_name = $_POST['searchName'];
+												if(!empty($search_name)){
+													
+													$students = $db->query("SELECT* FROM Student WHERE First_name LIKE '%$search_name%'");
+										
+													
+													if($students->num_rows>=1){
+														while($student =$students->fetch_object()){
+															
+														
+														echo "<p class=' col-md-1 text-center text-capitalize'>$student->Student_id</p>
+																<p class=' col-md-1 text-center text-capitalize'>$student->Gender</p>
+																<p class=' col-md-2 text-center text-capitalize'>$student->First_name</p>
+																<p class=' col-md-2 text-center text-capitalize'>$student->Last_name</p>
+																<p class=' col-md-3 text-center text-capitalize'>$student->Email</p>
+															<p class=' col-md-2 text-center text-capitalize'>$student->Instructor_id</p>
+															
+															<form action='#' method='#'>
+																<input type='submit' value='Delete'  class='btn btn-danger pull-right'/>
+															</form>
+															<br/><hr/>
+																						";
+														
+														}
+													}	
+													else{
+														echo 'No student match this name!';
+													}
+												}
+											}
+										
+										?>
+										
+										
+									</div>
+								</div>
 							</table>
-						
 						</div>
 					</div>
 				</div>
@@ -91,7 +132,9 @@
 			<?php include_once 'includes/footer.php';?>
 			
 			
-			
+			<br>
+			<br>
+			<a href ='main_page.php' class='btn btn-default btn-info col-md-offset-1'>Back to Main Page</a>
 			
 			<!-- End of the page design in main page -->
 	</body>

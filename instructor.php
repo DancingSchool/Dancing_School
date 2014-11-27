@@ -1,31 +1,42 @@
 	<!-- this will includes all the links files we need for this site to work! -->
-	<?php include_once 'includes/header.php';?>
+	<?php
+	
+		include_once 'includes/header.php';
+		include 'includes/db.php';
+		include'includes/session.php';
+	?>
 
 
 	<body>
 		
-		<head class="col-md-12">
+		<head class="container col-md-12">
 			<?php include_once 'includes/menu.php';?>	
 			
 		</head><!--End of the Head div -->
 		
 		
-		
-		
-		
-		<div class="container welcome_text">
 		<?php
-			
-			echo 'welcome to Instructor  page';
+						
+			$instructors = $db->query("SELECT* FROM Instructor");
+				
+			while($instructor =$instructors->fetch_object()){
+				$inst++;
+				
+				echo "<div class='container welcome_text col-md-4'>
+				
+					<div class='row'>
+						<div class='col-md-12'>
+							<img class='col-md-6' src='img/instructors/inst$inst.png'>
+							
+							<p class='text-left'>Name: $instructor->First_name</p>
+							<p class='text-left'>Surname: $instructor->Last_name</p>
+							<p class='text-left'>Email: <a href'#'>$instructor->Email</a></p>
+						</div>
+					</div>
+		
+				</div>";
+			}
 		?>
-		
-		
-		</div>
-		
-		
-		
-		
-		
 		
 		
 		
