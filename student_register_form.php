@@ -1,6 +1,12 @@
 	<!-- this will includes all the links files we need for this site to work! -->
 	<?php include_once 'includes/header.php';
 		include'includes/session.php';
+		
+			
+		if(!isset($_SESSION['username'])){
+			
+			header ("location: index.php");
+		}
 	?>
 
 
@@ -72,7 +78,7 @@
 												$search_name = $_POST['searchName'];
 												if(!empty($search_name)){
 													
-													$students = $db->query("SELECT* FROM Student WHERE First_name LIKE '%$search_name%'");
+													$students = $db->query("SELECT* FROM Student WHERE Existence=1 && First_name LIKE '%$search_name%'");
 										
 													
 													if($students->num_rows>=1){
@@ -86,9 +92,7 @@
 																<p class=' col-md-3 text-center text-capitalize'>$student->Email</p>
 															<p class=' col-md-2 text-center text-capitalize'>$student->Instructor_id</p>
 															
-															<form action='#' method='#'>
-																<input type='submit' value='Delete'  class='btn btn-danger pull-right'/>
-															</form>
+																<a href ='delete_student.php?id=$student->Student_id' class='btn btn-default btn-danger'>Delete</a>
 															<br/><hr/>
 																						";
 														

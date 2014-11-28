@@ -3,7 +3,7 @@
 //	include_once 'includes/session.php';		
 	include_once 'includes/header.php';
 ?>
-	<body>
+	<body id="index">
 		<!--This is my big div wrapped the full page-->
 		<div class="col-md-12 login_form">
 			<div id ="center">
@@ -28,9 +28,7 @@
 			<?php require_once 'includes/form.php';?>
 		</div>
 		
-		<!-- I will delete this button later for now just to go on next page -->
-		<a href="main_page.php" class="btn btn-default btn-danger">Main Page1</a>
-
+		
 		
 		<!-- This include fulction will add all the jQuery functions -->
 		<?php include_once 'includes/bottom_jQuery_script.php';?>

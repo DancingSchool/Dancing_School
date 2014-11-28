@@ -4,6 +4,12 @@
 		include_once 'includes/header.php';
 		include 'includes/db.php';
 		include'includes/session.php';
+
+	
+		if(!isset($_SESSION['username'])){
+		
+		header ("location: index.php");
+	}
 	?>
 
 
@@ -36,10 +42,11 @@
 		
 				</div>";
 			}
+			
+			
 		?>
 		
-		
-		
+
 		
 	
 			<!-- This include fulction will add all the jQuery functions -->

@@ -114,14 +114,11 @@
 			    function validateCouple(form){
 				var mID=form.maleID.value.trim();
 				var fID =form.femaleID.value.trim();
+				var Dstyle=form.Dstyle.value;
 				var validated =true;
-<<<<<<< HEAD
-				var checked;
+				var checked=0;
+				
 				if(mID.length<=0 ||isNaN(mID)){
-=======
-		
-				if(mID.length<=0){
->>>>>>> FETCH_HEAD
 				    setError(document.getElementById("maleID"));
 				    validated=false;
 				    }
@@ -130,11 +127,7 @@
 				    setCorrect(document.getElementById("maleID"));
 				    }
 				    
-<<<<<<< HEAD
 				if(fID.length<=0 ||isNaN(fID)){
-=======
-				if(fID.length<=0){
->>>>>>> FETCH_HEAD
 				    setError(document.getElementById("femaleID"));
 				    validated=false;
 				    }
@@ -142,26 +135,32 @@
 				else{
 				    setCorrect(document.getElementById("femaleID"));
 				    }
-					
-<<<<<<< HEAD
-				for(var i =0; i<document.couple.checkB.length; i++){
-
-					if(document.couple.checkB[i].checked){
-						
-						checked++;
+				if(Dstyle == "non"){
+					setError(document.getElementById("danceStyle"));
+					validated=false;
 					}
 					
-				}
-				
-				if(checked<3){
-				    setError(document.getElementById("danceType"));
-				    validated=false;
-				    }
-							
 				else{
-				    setCorrect(document.getElementById("danceType"));
-				    }
-				
+					setCorrect(document.getElementById("danceStyle"));	
+					
+					for(var i =0; i<document.couple["checkB[]"].length; i++){
+	
+						if(document.couple["checkB[]"][i].checked){
+							
+							checked++;
+							}
+						}
+					
+
+					if(checked<3){
+					    setError(document.getElementById("danceType"));
+					    validated=false;
+					    }
+								
+					else{
+					    setCorrect(document.getElementById("danceType"));
+					    }
+				}
 				return validated;
 				
 				
@@ -172,16 +171,16 @@
 				function checkControl(check){
 						var total =0;
 						
-						for(var i =0; i<document.couple.checkB.length; i++){
+						for(var i =0; i<document.couple["checkB[]"].length; i++){
 							
-							if(document.couple.checkB[i].checked){
+							if(document.couple["checkB[]"][i].checked){
 	
 								total = total+1;
 							}
 						
 						if(total>3){
 							
-							document.couple.checkB[check].checked=false;
+							document.couple["checkB[]"][check].checked=false;
 							return false;
 						}	
 					}
@@ -190,13 +189,13 @@
 		    function revealChoice(value){
 				    if(value=="ballroom"){
 					    
-					    document.getElementById("latin").innerHTML ="<h5><input type='checkbox' onclick ='checkControl(0)' name='checkB' value='waltz'> Waltz&nbsp; <input type='checkbox' onclick ='checkControl(1)' name='checkB' value='foxtrot'> Foxtrot &nbsp; <input type='checkbox' onclick ='checkControl(2)' name='checkB' value='quickstep'> Quick Step &nbsp;<input type='checkbox' onclick ='checkControl(3)' name='checkB' value='tango'> Tango </h5>";
+					    document.getElementById("latin").innerHTML ="<h5><input type='checkbox' onclick ='checkControl(0)' name='checkB[]' value='waltz'> Waltz&nbsp; <input type='checkbox' onclick ='checkControl(1)' name='checkB[]' value='foxtrot'> Foxtrot &nbsp; <input type='checkbox' onclick ='checkControl(2)' name='checkB[]' value='quickstep'> Quick Step &nbsp;<input type='checkbox' onclick ='checkControl(3)' name='checkB[]' value='tango'> Tango </h5>";
 					    
 				    }
 				    
-				    else if(value=="latin"){
+				    else if(value=="Latin Amarican"){
 					    
-					    document.getElementById("latin").innerHTML ="<h5><input type='checkbox' onclick ='checkControl(0)' name='checkB' value='chacha'> ChaCha&nbsp; <input type='checkbox' onclick ='checkControl(1)'name='checkB' value='rumba'> Rumba&nbsp; <input type='checkbox' onclick ='checkControl(2)' name='checkB' value='samba'> Samba &nbsp;<input type='checkbox' onclick ='checkControl(3)' name='checkB' value='jive '> Jive &nbsp; <input type='checkbox' onclick ='checkControl(4)' name='checkB' value='pasodoble'> Paso Doble </h5>";
+					    document.getElementById("latin").innerHTML ="<h5><input type='checkbox' onclick ='checkControl(0)' name='checkB[]' value='chacha'> ChaCha&nbsp; <input type='checkbox' onclick ='checkControl(1)'name='checkB[]' value='rumba'> Rumba&nbsp; <input type='checkbox' onclick ='checkControl(2)' name='checkB[]' value='samba'> Samba &nbsp;<input type='checkbox' onclick ='checkControl(3)' name='checkB[]' value='jive '> Jive &nbsp; <input type='checkbox' onclick ='checkControl(4)' name='checkB[]' value='pasodoble'> Paso Doble </h5>";
 
 				    }
 				    
@@ -206,10 +205,21 @@
 				    }
 				    
 			    }
+		
+			function validateMarking(form){
+					var coupleID =form.couple.value;
+					var validated =true;
+					
+					if(coupleID.length<=0 ||isNaN(coupleID)){
+					    setError(document.getElementById("coupleID"));
+					    validated=false;
+					    }
+								
+					else{
+					    setCorrect(document.getElementById("coupleID"));
+					    }
+				
+					return validated; 
+				
+				}
 			    
-=======
-				return validated;
-				
-				
-			    };
->>>>>>> FETCH_HEAD
